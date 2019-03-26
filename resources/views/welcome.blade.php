@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Sistem Pakar  Penentu Pekerjaan
                 </div>
 
                 <div class="links">
