@@ -145,7 +145,7 @@
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link @if(Request::is('home')) active @endif " href="{{route('home')}}">
                                 <span data-feather="home"></span>
                                 Dashboard <span class="sr-only">(current)</span>
                                 </a>
@@ -163,7 +163,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link  @if(Request::is('karakteristik')) active @endif" href="{{ route('karakteristik.index')}}">
                                 <span data-feather="users"></span>
                                 Karakteristik
                                 </a>

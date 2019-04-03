@@ -24,4 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'karakteristik'], function () {
     Route::get('', 'KarakteristikController@index')->name('karakteristik.index');
     Route::post('', 'KarakteristikController@store')->name('karakteristik.store');
+    Route::get('detail/{karakteristik}', 'KarakteristikController@show')->name('karakteristik.show');
+    Route::post('update/{karakteristik}', 'KarakteristikController@update')->name('karakteristik.update');
 });
