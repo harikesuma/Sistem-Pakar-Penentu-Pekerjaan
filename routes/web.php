@@ -21,3 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'karakteristik'], function () {
+    Route::get('', 'KarakteristikController@index')->name('karakteristik.index');
+    Route::post('', 'KarakteristikController@store')->name('karakteristik.store');
+});
