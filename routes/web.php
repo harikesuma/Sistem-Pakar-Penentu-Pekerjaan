@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +16,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pertanyaan', function(){
+    return view('pertanyaan');
+})->name('pertanyaan');
+
+Route::get('jawaban', function () {
+    return null;
+})->name('jawaban');
+
+Route::get('hasil', function(){
+    return view('hasil');
+})->name('hasil');
