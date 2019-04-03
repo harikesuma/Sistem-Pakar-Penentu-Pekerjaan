@@ -66,7 +66,8 @@ class KarakteristikController extends Controller
      */
     public function show(karakteristik $karakteristik)
     {
-        //
+        
+        return view('karakteristiks.show',['karakteristik'=>$karakteristik]);
     }
 
     /**
@@ -89,7 +90,9 @@ class KarakteristikController extends Controller
      */
     public function update(Request $request, karakteristik $karakteristik)
     {
-        //
+        $karakteristik->karakter = $request->karakter;
+        $karakteristik->save();
+        return redirect()->route('karakteristik.index');
     }
 
     /**

@@ -31,7 +31,7 @@
                         <td>{{ $loop->iteration}}</td>
                         <td>{{ $karakteristik->karakter}}</td>
                         <td>{{ $karakteristik->code}}</td>
-                        <td> <a href="#" class="btn btn-sm btn-secondary">Detail</a></td>
+                        <td> <a href="{{route('karakteristik.show',['karakteristik'=>$karakteristik->id])}}" class="btn btn-sm btn-secondary">Detail</a></td>
                     </tr>
                 @endforeach
             </tbody>
