@@ -43,3 +43,5 @@ Route::group(['prefix' => 'pekerjaan'], function () {
     // Route::get('/label','PekerjaanController@forLabel')->name('pekerjaan.label');
 });
 
+Route::resource('topics', 'TopicController');
+
