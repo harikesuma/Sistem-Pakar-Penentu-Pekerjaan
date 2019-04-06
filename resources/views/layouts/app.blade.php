@@ -157,7 +157,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link  @if(Request::is('pekerjaan')) active @endif" href="{{ route('pekerjaan.index')}}"">
                                 <span data-feather="shopping-cart"></span>
                                 Pekerjaan
                                 </a>
