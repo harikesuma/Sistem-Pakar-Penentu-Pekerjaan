@@ -20,7 +20,7 @@ class RecomendationController extends Controller
     public function index(Topic $topic){
         session(['recomendation_list'=>$topic->pekerjaans->sortBy('label')]);
         return $this->pertanyaan();
-        //return $this->pertanyaan($topic->pekerjaans->sortBy('label') , $topic);
+
     }
 
     public function yesAnswer(Request $request , Topic $topic){
@@ -33,8 +33,7 @@ class RecomendationController extends Controller
         });
         session(['recomendation_list'=>$pekerjaans->sortBy('label')]);
         return $this->pertanyaan();
-        // $pekerjaans = pekerjaan::where('label','like',$yesLabel.'%')->get();
-        // return $this->pertanyaan($pekerjaans->sortBy('label') , $topic);
+        
     }
 
     public function noAnswer(Request $request , Topic $topic){
@@ -45,15 +44,7 @@ class RecomendationController extends Controller
         });
         session(['recomendation_list'=>$pekerjaans->sortBy('label')]);
         return $this->pertanyaan();
-        // $noLabel = session('no');
-        // $noLabel = $noLabel.$request->karakteristik_code; 
-        // session(['no'=>$noLabel]);
-        // $yesLabel = session('yes');
-        // $pekerjaans = pekerjaan::where('label','like',$yesLabel.'%')->get();
-        // $pekerjaans = $pekerjaans->filter(function ($pekerjaan) use ($noLabel){
-        //     return stristr($pekerjaan->label, $noLabel) ? false : true;
-        // });
-        // return $this->pertanyaan($pekerjaans->sortBy('label') , $topic);
+       
     }
 
     public function done(){
