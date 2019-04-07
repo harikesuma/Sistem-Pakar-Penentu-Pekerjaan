@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
 use App\Topic;
 use App\pekerjaan;
@@ -12,6 +12,7 @@ use Session;
 class RecomendationController extends Controller
 {
     public function topic(){
+        session()->flush();
         $topic = Topic::all();
         return view('recomendation.topic' , ["topics"=> $topic]);
     }
@@ -63,10 +64,20 @@ class RecomendationController extends Controller
     private function pertanyaan(){
         $codeQuestion = $this->getQuestion();
         if(is_null($codeQuestion)){
-            return session('pekerjaan');
+            return $this->result();
         }
         $pertanyaan = karakteristik::where('code',$codeQuestion)->first();
         return view('recomendation.pertanyaan',['pertanyaan'=>$pertanyaan]);
+
+    }
+
+    private function result(){
+        $pekerjaan = collect(session('pekerjaan'))->reverse();
+        $result = $pekerjaan->map(function($pekerjaan_id){
+            return pekerjaan::find($pekerjaan_id);
+        })->unique();
+     
+        return view('recomendation.result',['pekerjaans'=>$result]);
 
     }
 
