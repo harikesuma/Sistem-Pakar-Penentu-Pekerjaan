@@ -14,5 +14,5 @@ class Topic extends Model
         'nama_topic'
     ];
 
-    public $timestamps = false;
+    //public $timestamps = false;
 }
