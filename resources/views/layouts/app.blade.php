@@ -151,7 +151,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link @if(Request::is('topics')) active @endif" href={{route('topics.index')}}>
                                 <span data-feather="file"></span>
                                 Topic
                                 </a>
