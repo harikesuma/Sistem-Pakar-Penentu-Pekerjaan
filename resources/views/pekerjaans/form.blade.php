@@ -13,10 +13,9 @@
         <div class="form-group">
             <label for="pekerjaan">Topik</label>
             <select class="custom-select" name="topik" required>
-                <option value="">Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                @foreach ($topics as $topic)
+                    <option value={{ $topic->id }}>{{ $topic->nama_topic}}</option>
+                @endforeach
             </select>
             <div class="invalid-feedback">Example invalid custom select feedback</div>
         </div>

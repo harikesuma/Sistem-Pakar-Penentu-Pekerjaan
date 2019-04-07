@@ -44,4 +44,11 @@ Route::group(['prefix' => 'pekerjaan'], function () {
 });
 
 Route::resource('topics', 'TopicController');
+Route::group(['prefix' => 'recomendation'], function () {
+    Route::get('topic','RecomendationController@topic')->name('recomendation.topic');
+    Route::get('/{topic}','RecomendationController@index')->name('recomendation.index');
+    Route::post('yes','RecomendationController@yesAnswer')->name('recomendation.yes');
+    Route::post('no','RecomendationController@noAnswer')->name('recomendation.no');
+});
+Route::get('done','RecomendationController@done');
 

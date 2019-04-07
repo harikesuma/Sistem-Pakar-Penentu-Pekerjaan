@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\pekerjaan;
 use App\karakteristik;
+use App\Topic;
 
 
 
@@ -34,8 +35,8 @@ class PekerjaanController extends Controller
      */
     public function create()
     {
-
-        return view('pekerjaans.form');
+        $topics = Topic::all();
+        return view('pekerjaans.form' , ['topics'=>$topics]);
     }
 
     /**
