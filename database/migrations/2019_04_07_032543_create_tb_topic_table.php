@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePekerjaansTable extends Migration
+class CreateTbTopicTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreatePekerjaansTable extends Migration
      */
     public function up()
     {
-        Schema::create('pekerjaans', function (Blueprint $table) {
+        Schema::create('tb_topic', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('pekerjaan');
-            $table->string('image');
-            $table->integer('topik_id');
-            $table->string('label')->nullable();
-            $table->string('deskripsi')->nullable();
+            $table->string('nama_topic');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreatePekerjaansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pekerjaans');
+        Schema::dropIfExists('tb_topic');
     }
 }
