@@ -18,7 +18,7 @@
         </div>
 
         <div class="col table-bordered">
-            <h4>{{$pekerjaan->deskripsi}}</h4>
+            <p>{{$pekerjaan->deskripsi}}</p>
         </div>
     </div>
 
