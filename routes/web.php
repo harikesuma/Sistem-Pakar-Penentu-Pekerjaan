@@ -38,6 +38,7 @@ Route::group(['prefix' => 'pekerjaan'], function () {
     Route::delete('/{pekerjaan}', 'PekerjaanController@destroy')->name('pekerjaan.delete');
     Route::post('/detail/karakteristik/{pekerjaan}', 'PekerjaanController@tambahKarakteristik')->name('pekerjaan.karakteristik');
     Route::get('detail/karakteristik/{pekerjaan}', 'PekerjaanController@generateLabel')->name('pekerjaan.generate');
+    Route::get('hapus/karakteristik/{pekerjaan}/{id}','PekerjaanController@hapusKarakter')->name('pekerjaan.hapusKarakter');
         
     // Route::get('create/label', 'PekerjaanController@showKarakteristikForm')->name('pekerjaan.karakteristik');
     // Route::get('/label','PekerjaanController@forLabel')->name('pekerjaan.label');

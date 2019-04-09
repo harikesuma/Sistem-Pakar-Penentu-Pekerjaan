@@ -152,14 +152,18 @@ class PekerjaanController extends Controller
     }
 
     public function generateLabel(pekerjaan $pekerjaan){
-        
+        $labels = null;
         foreach ($pekerjaan->karakteristik->sortBy('code') as $label){
               $labels[] = $label->code; 
         }
-       
-       $labelImplode =  implode($labels);
+       if(is_null($labels)){
+           $pekerjaan->label = '';
+       }
+       else{
+        $labelImplode =  implode($labels);
 
         $pekerjaan->label = $labelImplode;
+       }
         $pekerjaan->save();
         return redirect()->route('pekerjaan.index');
 
@@ -174,4 +178,9 @@ class PekerjaanController extends Controller
 
     //     return $request->label;
     // }
+
+    public function hapusKarakter(pekerjaan $pekerjaan , $id){
+        $pekerjaan->karakteristik()->detach($id);
+        return redirect()->back();
+    }
 }

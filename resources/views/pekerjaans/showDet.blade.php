@@ -39,6 +39,7 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{$kerja->karakter}}</td>
                             <td>{{$kerja->code}}</td>
+                            <td><a href="{{ Route('pekerjaan.hapusKarakter',['pekerjaan'=>$pekerjaan->id,'id'=>$kerja->id])}}"  class="btn btn-sm btn-danger">hapus</a></td>
                         </tr>
                     @endforeach
                     
