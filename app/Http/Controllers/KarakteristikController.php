@@ -51,7 +51,7 @@ class KarakteristikController extends Controller
         $id = $karakteristik->id;
         $index = ($id - 1)% 26;   
         $abjad = $this->alfabets[$index];
-        $counter = karakteristik::where('karakter','like','%'.$abjad)->count();
+        $counter = karakteristik::where('karakter','like','%'.$abjad.'%')->count();
         $code = $abjad.$counter;
         $karakteristik->code = $code;
         $karakteristik->save();

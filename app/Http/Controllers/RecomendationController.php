@@ -11,16 +11,22 @@ use Session;
 
 class RecomendationController extends Controller
 {
-    public function topic(){
-        session()->flush();
-        $topic = Topic::all();
-        return view('recomendation.topic' , ["topics"=> $topic]);
-    }
+    // public function topic(){
+    //     session()->flush();
+    //     $topic = Topic::all();
+    //     return view('recomendation.topic' , ["topics"=> $topic]);
+    // }
 
-    public function index(Topic $topic){
-        session(['recomendation_list'=>$topic->pekerjaans->sortBy('label')]);
+    // public function index(Topic $topic){
+    //     session(['recomendation_list'=>$topic->pekerjaans->sortBy('label')]);
+    //     return $this->pertanyaan();
+
+    // }
+
+    public function index(){
+        $pekerjaans = pekerjaan::all()->sortBy('label');
+        session(['recomendation_list'=>$pekerjaans]);
         return $this->pertanyaan();
-
     }
 
     public function yesAnswer(Request $request , Topic $topic){
