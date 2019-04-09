@@ -36,8 +36,8 @@
                     {{-- <td><a  href="{{ asset('/storage/pekerjaan/'.$pekerjaan->image) }}" target="_blank">
                         <img src="{{ asset('/storage/pekerjaan/'.$pekerjaan->image) }}"  class="rounded-circle" alt="logo_simple"  width="55px" height="55px">
                     </a></td> --}}
-                    <td>{{ $pekerjaan->topik_id}}</td>
-                <td>{{$pekerjaan->label}}</td>
+                    <td>{{$pekerjaan->topic->nama_topic}}</td>
+                    <td>{{$pekerjaan->label}}</td>
                     {{-- <td>{{ $pekerjaan->label}}</td> --}}
                     {{-- <td>{{ $pekerjaan->deskripsi}}</td> --}}
                     {{-- <td> <a href="{{route('pekerjaan.karakteristik',['pekerjaan'=>$pekerjaan->id])}}"class="btn btn-sm btn-secondary">Label</a></td> --}}

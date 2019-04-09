@@ -68,7 +68,7 @@ class PekerjaanController extends Controller
           $pekerjaan =  new pekerjaan();
           $pekerjaan->pekerjaan = $request->pekerjaan;
           $pekerjaan->image = $fileNameToStorage;
-          $pekerjaan->topik_id = 1;
+          $pekerjaan->topic_id = $request->topik;
           $pekerjaan->deskripsi = $request->deskripsi;
 
           $pekerjaan->save();
