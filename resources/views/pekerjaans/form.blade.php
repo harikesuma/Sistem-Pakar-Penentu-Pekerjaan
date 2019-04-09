@@ -22,7 +22,7 @@
 
         <div class="form-group">
                 <label for="pekerjaan">Deskripsi</label>
-                <input type="text-area" class="form-control" id="pekerjaan" name="deskripsi"  placeholder="">    
+                <textarea name="deskripsi" id="pekerjaan" class="form-control" cols="30" rows="10"></textarea>   
         </div>
 
         <div class="custom-file my-4">
