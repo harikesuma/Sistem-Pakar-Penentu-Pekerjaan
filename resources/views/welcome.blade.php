@@ -8,7 +8,7 @@
         <a href={{Route('recomendation.index')}} class="btn btn-lg bg-purple text-white">Mulai Tes Sekarang</a>
         </p>
     </div>
-   
+   //
 @endsection
 
   
